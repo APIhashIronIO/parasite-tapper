@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Вирус: Tap-Parasite</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parasite Tapper</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="game">
-    <canvas id="gameCanvas"></canvas>
-
-    <!-- UI Panel -->
-    <div class="ui-panel">
-      <div class="points-display">
-        📊 Очки: <span id="points">0</span>
+  <div id="ui">
+    <div class="hud">
+      <div class="hud-item">
+        <img src="icons/virus.svg" alt="Virus" class="hud-icon">
+        <span id="points">0</span>
       </div>
-      <div class="upgrade-list">
-        <h3>Улучшения</h3>
-        <button class="upgrade-btn" id="upgrade-speed">🚀 Быстрое размножение (<span id="cost-speed">20</span>)</button>
-        <button class="upgrade-btn" id="upgrade-resist">💉 Устойчивость (<span id="cost-resist">35</span>)</button>
-        <button class="upgrade-btn" id="upgrade-stealth">🕵️‍♂️ Невидимость (<span id="cost-stealth">50</span>)</button>
+      <div class="hud-item">
+        <img src="icons/upgrade.svg" alt="Upgrades" class="hud-icon">
+        <span>Upgrades</span>
       </div>
     </div>
+
+    <div class="upgrades-panel">
+      <h2>Mutations</h2>
+      <button class="upgrade-btn" id="resistance">
+        <img src="icons/shield.svg" alt="Resistance">
+        <div>
+          <h3>Drug Resistance</h3>
+          <p>Reduces impact of medicine.</p>
+        </div>
+      </button>
+      <button class="upgrade-btn" id="replication">
+        <img src="icons/speed.svg" alt="Replication">
+        <div>
+          <h3>Fast Replication</h3>
+          <p>Increases infection rate.</p>
+        </div>
+      </button>
+      <button class="upgrade-btn" id="stealth">
+        <img src="icons/stealth.svg" alt="Stealth">
+        <div>
+          <h3>Immune Stealth</h3>
+          <p>Avoid detection by immune system.</p>
+        </div>
+      </button>
+    </div>
   </div>
+
+  <canvas id="gameCanvas"></canvas>
+
   <script src="game.js"></script>
 </body>
 </html>
