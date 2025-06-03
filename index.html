@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Паразит: Зарази мир!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Telegram WebApp API -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game">
+    <h1>🦠 Паразит: Зарази мир</h1>
+    <div id="cell" class="cell"></div>
+    <p>Заражено клеток: <span id="infectedCount">0</span></p>
+    <button id="infectBtn">🧬 Заразить клетку</button>
+
+    <h2>Апгрейды</h2>
+    <button id="upgrade1">🧪 Мутация (x2) — 10 клеток</button>
+    <button id="upgrade2">🧍‍♂️ Антивакцинщик (+1 за сек) — 25 клеток</button>
+    <button id="upgrade3">🧫 Генная инъекция (x5) — 100 клеток</button>
+    <button id="upgrade4">💉 Убийство вакцины (+5 за сек) — 200 клеток</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
+git --version
