@@ -1,39 +1,41 @@
-const mutations = [
-  {
-    name: "Drug Resistance",
-    description: "Reduces impact of medicine.",
-    img: "assets/shield.svg", // было images/resistance.png
-  },
-  {
-    name: "Fast Replication",
-    description: "Increases infection rate.",
-    img: "assets/speed.svg", // было images/replication.png
-  },
-  {
-    name: "Immune Stealth",
-    description: "Avoid detection by immune system.",
-    img: "assets/stealth.svg", // было images/stealth.png
-  },
-];
+let virusCount = parseInt(localStorage.getItem('virusCount')) || 0;
+let upgrades = JSON.parse(localStorage.getItem('upgrades')) || {};
 
-const container = document.getElementById("mutation-container");
+const counter = document.getElementById('virus-count');
+const infectButton = document.getElementById('infect-button');
+const mutations = document.querySelectorAll('.mutation');
 
-mutations.forEach((mutation) => {
-  const card = document.createElement("div");
-  card.className = "mutation-card";
+function updateUI() {
+  counter.textContent = virusCount;
+  localStorage.setItem('virusCount', virusCount);
+  localStorage.setItem('upgrades', JSON.stringify(upgrades));
+}
 
-  const img = document.createElement("img");
-  img.src = mutation.img;
-  img.alt = mutation.name;
+function playSound() {
+  const audio = new Audio('assets/click.mp3');
+  audio.play();
+}
 
-  const title = document.createElement("h4");
-  title.textContent = mutation.name;
-
-  const desc = document.createElement("p");
-  desc.textContent = mutation.description;
-
-  card.appendChild(img);
-  card.appendChild(title);
-  card.appendChild(desc);
-  container.appendChild(card);
+infectButton.addEventListener('click', () => {
+  virusCount += 1 + (upgrades.speed || 0);
+  updateUI();
+  playSound();
 });
+
+mutations.forEach(mutation => {
+  mutation.addEventListener('click', () => {
+    const cost = parseInt(mutation.dataset.cost);
+    const id = mutation.dataset.id;
+
+    if (virusCount >= cost) {
+      virusCount -= cost;
+      upgrades[id] = (upgrades[id] || 0) + 1;
+      updateUI();
+      alert(`${id} upgraded!`);
+    } else {
+      alert('Not enough viruses!');
+    }
+  });
+});
+
+updateUI();

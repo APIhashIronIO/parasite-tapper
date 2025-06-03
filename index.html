@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tap Parasite</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="hud">
-    <div class="hud-top">
-      <img src="assets/virus.svg" class="icon" />
-      <span class="virus-count">Virus <strong id="virusCount">0</strong></span>
+  <header>
+    <div class="header-content">
+      <img src="assets/virus.svg" class="virus-icon" />
+      <span id="virus-count">0</span> viruses
     </div>
-    <div class="hud-buttons">
-      <button class="menu-button">
-        <img src="assets/shield.svg" class="icon-small" />
-        Upgrades
-      </button>
-      <button class="menu-button">
-        <img src="assets/stealth.svg" class="icon-small" />
-        Mutations
-      </button>
-    </div>
-  </div>
+  </header>
 
-  <div class="center-ui">
-    <h1>🦠 Tap to Infect</h1>
-    <button class="play-button">Start Infection</button>
-  </div>
+  <main>
+    <div class="virus-area" id="virus-area">
+      <img src="assets/virus.svg" class="tap-virus" />
+      <button id="infect-button">INFECT</button>
+    </div>
+
+    <section class="mutations">
+      <h2>Mutations</h2>
+      <div class="mutation" data-cost="100" data-id="speed">
+        <img src="assets/speed.svg" />
+        <div>
+          <strong>Rapid Replication</strong>
+          <p>COST: 100</p>
+        </div>
+      </div>
+      <div class="mutation" data-cost="500" data-id="shield">
+        <img src="assets/shield.svg" />
+        <div>
+          <strong>Drug Resistance</strong>
+          <p>COST: 500</p>
+        </div>
+      </div>
+      <div class="mutation" data-cost="1500" data-id="stealth">
+        <img src="assets/stealth.svg" />
+        <div>
+          <strong>Invisibility</strong>
+          <p>COST: 1500</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <script src="game.js"></script>
 </body>

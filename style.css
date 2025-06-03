@@ -1,91 +1,95 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  font-family: 'Segoe UI', sans-serif;
-  color: #e0faff;
-  overflow: hidden;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
-.hud {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+body {
+  background: radial-gradient(ellipse at center, #041d3d 0%, #010d1f 100%);
+  color: #ffffff;
+  text-align: center;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: #020b16cc;
+  padding: 10px;
+  font-size: 20px;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.header-content {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 
-.hud-top {
-  display: flex;
-  align-items: center;
+.virus-icon {
+  width: 32px;
+}
+
+main {
+  padding: 20px;
+}
+
+.virus-area {
+  margin-top: 30px;
+}
+
+.tap-virus {
+  width: 120px;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+#infect-button {
+  margin-top: 15px;
+  padding: 10px 30px;
   font-size: 20px;
-  gap: 8px;
+  background: linear-gradient(to bottom, #06f, #00c6ff);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.virus-count strong {
-  font-size: 24px;
-  color: #0ff;
-  text-shadow: 0 0 5px #0ff;
+#infect-button:active {
+  transform: scale(0.95);
 }
 
-.hud-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.mutations {
+  margin-top: 40px;
 }
 
-.menu-button {
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid #0ff;
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 6px;
+.mutation {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00c6ff30;
+  margin: 12px auto;
+  padding: 10px 15px;
+  width: 280px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-weight: bold;
+  gap: 15px;
   cursor: pointer;
   transition: 0.2s;
 }
 
-.menu-button:hover {
-  background-color: rgba(0, 255, 255, 0.2);
+.mutation:hover {
+  background-color: rgba(0, 255, 255, 0.1);
 }
 
-.icon {
-  width: 32px;
-  height: 32px;
-}
-
-.icon-small {
-  width: 20px;
-  height: 20px;
-}
-
-.center-ui {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.play-button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #0ff;
-  color: #000;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #0ff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.play-button:hover {
-  transform: scale(1.05);
-  background-color: #00e5e5;
+.mutation img {
+  width: 40px;
 }
