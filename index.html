@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Virus Mutations</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Tap Parasite</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🧬 Virus <span id="virus-level">0</span></h1>
-    <h2>🧪 Upgrades</h2>
-  </header>
-
-  <main>
-    <h3>Mutations</h3>
-    <div class="mutation-container" id="mutation-container">
-      <!-- Карточки будут добавлены через JS -->
+  <div class="hud">
+    <div class="hud-top">
+      <img src="assets/virus.svg" class="icon" />
+      <span class="virus-count">Virus <strong id="virusCount">0</strong></span>
     </div>
-  </main>
+    <div class="hud-buttons">
+      <button class="menu-button">
+        <img src="assets/shield.svg" class="icon-small" />
+        Upgrades
+      </button>
+      <button class="menu-button">
+        <img src="assets/stealth.svg" class="icon-small" />
+        Mutations
+      </button>
+    </div>
+  </div>
 
-  <script src="script.js"></script>
+  <div class="center-ui">
+    <h1>🦠 Tap to Infect</h1>
+    <button class="play-button">Start Infection</button>
+  </div>
+
+  <script src="game.js"></script>
 </body>
 </html>
