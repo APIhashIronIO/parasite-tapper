@@ -1,53 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parasite Tapper</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virus Mutations</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="ui">
-    <div class="hud">
-      <div class="hud-item">
-        <img src="icons/virus.svg" alt="Virus" class="hud-icon">
-        <span id="points">0</span>
-      </div>
-      <div class="hud-item">
-        <img src="icons/upgrade.svg" alt="Upgrades" class="hud-icon">
-        <span>Upgrades</span>
-      </div>
+  <header>
+    <h1>🧬 Virus <span id="virus-level">0</span></h1>
+    <h2>🧪 Upgrades</h2>
+  </header>
+
+  <main>
+    <h3>Mutations</h3>
+    <div class="mutation-container" id="mutation-container">
+      <!-- Карточки будут добавлены через JS -->
     </div>
+  </main>
 
-    <div class="upgrades-panel">
-      <h2>Mutations</h2>
-      <button class="upgrade-btn" id="resistance">
-        <img src="icons/shield.svg" alt="Resistance">
-        <div>
-          <h3>Drug Resistance</h3>
-          <p>Reduces impact of medicine.</p>
-        </div>
-      </button>
-      <button class="upgrade-btn" id="replication">
-        <img src="icons/speed.svg" alt="Replication">
-        <div>
-          <h3>Fast Replication</h3>
-          <p>Increases infection rate.</p>
-        </div>
-      </button>
-      <button class="upgrade-btn" id="stealth">
-        <img src="icons/stealth.svg" alt="Stealth">
-        <div>
-          <h3>Immune Stealth</h3>
-          <p>Avoid detection by immune system.</p>
-        </div>
-      </button>
-    </div>
-  </div>
-
-  <canvas id="gameCanvas"></canvas>
-
-  <script src="game.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
