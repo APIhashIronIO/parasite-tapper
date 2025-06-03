@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Паразит: Зарази мир!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Telegram WebApp API -->
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вирус: Tap-Parasite</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
   <div id="game">
-    <h1>🦠 Паразит: Зарази мир</h1>
-    <div id="cell" class="cell"></div>
-    <p>Заражено клеток: <span id="infectedCount">0</span></p>
-    <button id="infectBtn">🧬 Заразить клетку</button>
+    <canvas id="gameCanvas"></canvas>
 
-    <h2>Апгрейды</h2>
-    <button id="upgrade1">🧪 Мутация (x2) — 10 клеток</button>
-    <button id="upgrade2">🧍‍♂️ Антивакцинщик (+1 за сек) — 25 клеток</button>
-    <button id="upgrade3">🧫 Генная инъекция (x5) — 100 клеток</button>
-    <button id="upgrade4">💉 Убийство вакцины (+5 за сек) — 200 клеток</button>
+    <!-- UI Panel -->
+    <div class="ui-panel">
+      <div class="points-display">
+        📊 Очки: <span id="points">0</span>
+      </div>
+      <div class="upgrade-list">
+        <h3>Улучшения</h3>
+        <button class="upgrade-btn" id="upgrade-speed">🚀 Быстрое размножение (<span id="cost-speed">20</span>)</button>
+        <button class="upgrade-btn" id="upgrade-resist">💉 Устойчивость (<span id="cost-resist">35</span>)</button>
+        <button class="upgrade-btn" id="upgrade-stealth">🕵️‍♂️ Невидимость (<span id="cost-stealth">50</span>)</button>
+      </div>
+    </div>
   </div>
-
   <script src="game.js"></script>
 </body>
 </html>
